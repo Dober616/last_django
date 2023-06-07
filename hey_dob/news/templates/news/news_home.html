@@ -1,12 +1,23 @@
 {% extends 'main/layout.html' %}
 {% block title %}
-  <title>Новости на сайте</title>
+Новости на сайте
 {% endblock %}
 
 {% block body %}
 <div class="features">
-  <h1>Последние новости</h1>
-  <p>Вот вам первая новость</p>
-  <button class="btn btn-warning">Предложить новость</button>
+    <h1>Последние новости</h1>
+    {% if news %}
+      {% for new in news %}
+        <div class="alert alert-warning">
+          <h3>{{ new.title }}</h3>
+          <p>{{ new.intro}}</p>
+        </div>
+      {% endfor %}
+      {% else %}
+        <p>На текущий момент новостей нет...</p>
+    {% endif %}
+
+
+  {# Комментарий #}
 </div>
 {% endblock %}

@@ -9,7 +9,7 @@ class DataBase(models.Model):
     author = models.CharField('Автор статьи', max_length=50)
 
     def __str__(self):
-        return self.title
+        return  f'Новость: {self.title}'
 
     class Meta:
         verbose_name = 'Новость'
